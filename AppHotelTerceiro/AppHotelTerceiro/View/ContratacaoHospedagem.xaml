@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotelTerceiro.View.ContratacaoHospedagem"
+             Title="Contratação de Hospedagem">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid RowDefinitions="Auto, Auto"
+                  ColumnDefinitions="*, *, 2*">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                      Text="Adultos:" />
+                
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="{Binding Value}"
+                       BindingContext="{x:Reference stp_adultos}"/>
+                
+                <Stepper Grid.Row="0" Grid.Column="2"
+                         Minimum="0"
+                         Maximum="10"
+                         x:Name="stp_adultos" />
+
+                
+                
+                
+                
+                <Label Grid.Row="1" Grid.Column="0"
+                      Text="Crianças:" />
+                <Label Grid.Row="1" Grid.Column="1"
+                      Text="{Binding Value}"
+                       BindingContext="{x:Reference stp_criancas}"/>
+                
+                <Stepper Grid.Row="1" Grid.Column="2"
+                         Minimum="0"
+                         Maximum="10"
+                         x:Name="stp_criancas"/>
+
+            </Grid>
+
+            <Picker Title="Selecione uma Suíte"
+                    ItemDisplayBinding="{Binding Descricao}"
+                    x:Name="pck_suites" />
+
+            <Frame BackgroundColor="#eee" Margin="10">
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Data Check-in:" />
+                        <DatePicker x:Name="dtpck_checkin"
+                                    Format="dd/MM/yyyy"
+                                    DateSelected="dtpck_checkin_DateSelected" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Data Check-out:" />
+                        <DatePicker x:Name="dtpck_checkout"
+                                    Format="dd/MM/yyyy" />
+                    </StackLayout>
+
+
+                </StackLayout>                
+            </Frame>
+
+            <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
