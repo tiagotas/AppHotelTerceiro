@@ -6,6 +6,8 @@ using AppHotelTerceiro.View;
 using AppHotelTerceiro.Model;
 
 using System.Collections.Generic;
+using System.Threading;
+using System.Globalization;
 
 namespace AppHotelTerceiro
 {
@@ -37,6 +39,8 @@ namespace AppHotelTerceiro
 
         public App()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new ContratacaoHospedagem());

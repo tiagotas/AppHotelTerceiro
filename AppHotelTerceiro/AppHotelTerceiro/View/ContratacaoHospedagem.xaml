@@ -2,66 +2,78 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelTerceiro.View.ContratacaoHospedagem"
-             Title="Contratação de Hospedagem">
+             Title="Contratação de Hospedagem"
+             BackgroundColor="DarkOliveGreen">
     <ContentPage.Content>
         <StackLayout>
 
-            <Grid RowDefinitions="Auto, Auto"
-                  ColumnDefinitions="*, *, 2*">
+            <Label Text="Cálculo da Diária" />
 
-                <Label Grid.Row="0" Grid.Column="0"
-                      Text="Adultos:" />
-                
-                <Label Grid.Row="0" Grid.Column="1"
-                       Text="{Binding Value}"
-                       BindingContext="{x:Reference stp_adultos}"/>
-                
-                <Stepper Grid.Row="0" Grid.Column="2"
-                         Minimum="0"
-                         Maximum="10"
-                         x:Name="stp_adultos" />
+            <Frame Margin="10">
+                <StackLayout>
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="*, *, 2*">
 
-                
-                
-                
-                
-                <Label Grid.Row="1" Grid.Column="0"
-                      Text="Crianças:" />
-                <Label Grid.Row="1" Grid.Column="1"
-                      Text="{Binding Value}"
-                       BindingContext="{x:Reference stp_criancas}"/>
-                
-                <Stepper Grid.Row="1" Grid.Column="2"
-                         Minimum="0"
-                         Maximum="10"
-                         x:Name="stp_criancas"/>
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Adultos:" />
 
-            </Grid>
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}"
+                               Style="{StaticResource Valores}" />
 
-            <Picker Title="Selecione uma Suíte"
-                    ItemDisplayBinding="{Binding Descricao}"
-                    x:Name="pck_suites" />
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 x:Name="stp_adultos" />
 
-            <Frame BackgroundColor="#eee" Margin="10">
-                <StackLayout HorizontalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Data Check-in:" />
-                        <DatePicker x:Name="dtpck_checkin"
-                                    Format="dd/MM/yyyy"
-                                    DateSelected="dtpck_checkin_DateSelected" />
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Data Check-out:" />
-                        <DatePicker x:Name="dtpck_checkout"
-                                    Format="dd/MM/yyyy" />
-                    </StackLayout>
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Crianças:" />
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}"
+                               Style="{StaticResource Valores}" />
 
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 x:Name="stp_criancas"/>
 
-                </StackLayout>                
+                    </Grid>
+
+                    <Label Text="Escolha uma Suite"
+                           Style="{StaticResource Explicativos}"
+                           Margin="0, 15, 0, 0"/>
+                    
+                    <Picker Title="Selecione uma Suíte"
+                            HorizontalTextAlignment="Center"
+                            ItemDisplayBinding="{Binding Descricao}"
+                            x:Name="pck_suites" />
+
+                    <Frame BackgroundColor="#CCC" Margin="10">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Período de Estadia"
+                                   Style="{StaticResource Explicativos}"/>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Check-in:" />
+                                <DatePicker x:Name="dtpck_checkin"
+                                            Format="dd/MM/yyyy"
+                                            DateSelected="dtpck_checkin_DateSelected" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Check-out:" />
+                                <DatePicker x:Name="dtpck_checkout"
+                                            Format="dd/MM/yyyy" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" />
+
+                </StackLayout>
             </Frame>
-
-            <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" />
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

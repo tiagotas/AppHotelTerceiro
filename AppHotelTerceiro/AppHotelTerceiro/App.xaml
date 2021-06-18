@@ -2,7 +2,44 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelTerceiro.App">
+    
     <Application.Resources>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="Valores">
+            <Setter Property="TextColor" Value="DarkRed" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="Explicativos">
+            <Setter Property="TextColor" Value="DarkOliveGreen" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="TextTransform" Value="Uppercase" />
+            <Setter Property="FontSize" Value="Body" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#EEE" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+        
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="DarkRed" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+
+        <!-- <Setter Property="" Value="" /> -->
 
     </Application.Resources>
 </Application>

@@ -39,30 +39,22 @@ namespace AppHotelTerceiro.View
         {
             try
             {
-                /*Hospedagem dados_hospedagem = new Hospedagem()
-                {
-                    Quarto = (Suite)pck_suites.SelectedItem,
-                    DataCheckIn = dtpck_checkin.Date,
-                    DataCheckOut = dtpck_checkout.Date
-                };*/
-
-
                 Navigation.PushAsync(new HospedagemCalculada()
                 {
                     BindingContext = new Hospedagem()
                     {
+                        QntAdultos = Convert.ToInt32(stp_adultos.Value),
+                        QntCriancas = Convert.ToInt32(stp_criancas.Value),
                         Quarto = (Suite)pck_suites.SelectedItem,
                         DataCheckIn = dtpck_checkin.Date,
                         DataCheckOut = dtpck_checkout.Date
                     }
                 });
 
-
             } catch(Exception ex)
             {
                 DisplayAlert("Ops", ex.Message, "OK");
             }
-
         }
 
         private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)
