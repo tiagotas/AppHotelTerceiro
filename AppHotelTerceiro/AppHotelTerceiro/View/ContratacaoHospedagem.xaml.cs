@@ -20,6 +20,8 @@ namespace AppHotelTerceiro.View
         {
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, false);
+
             PropriedadesApp = (App)Application.Current;
 
             pck_suites.ItemsSource = PropriedadesApp.Suites;

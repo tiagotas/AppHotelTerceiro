@@ -2,13 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelTerceiro.View.HospedagemCalculada"
-             Title="{Binding Path=Quarto.Descricao}"
+             
              BackgroundColor="DarkOliveGreen">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+
+            <Label Text="Detalhes da Estadia" Style="{StaticResource Titulo} " />
 
             <Label Text="{Binding Path=Quarto.Descricao}"
-                HorizontalOptions="CenterAndExpand" />
+                   TextColor="White"
+                   TextTransform="Uppercase"
+                   FontAttributes="Bold"
+                   Margin="0, 15, 0, 10"/>
             
             <Frame Margin="10">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -49,9 +54,10 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Valor da Hospedagem: " />
-                            <Span Text="{Binding ValorTotal, StringFormat='{}{0:c}'}" 
-                                 
-                                  FontSize="Large"/>
+                            <Span Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"                                  
+                                  FontSize="Large"
+                                  TextColor="DarkRed"
+                                  FontAttributes="Bold"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>

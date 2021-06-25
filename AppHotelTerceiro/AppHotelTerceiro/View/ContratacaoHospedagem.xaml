@@ -2,12 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppHotelTerceiro.View.ContratacaoHospedagem"
-             Title="Contratação de Hospedagem"
              BackgroundColor="DarkOliveGreen">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
 
-            <Label Text="Cálculo da Diária" />
+            <Label Text="Cálculo da Diária" Style="{StaticResource Titulo }" />
 
             <Frame Margin="10">
                 <StackLayout>
@@ -69,9 +68,7 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-
                     <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" />
-
                 </StackLayout>
             </Frame>
         </StackLayout>
